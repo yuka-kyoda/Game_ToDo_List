@@ -18,5 +18,15 @@
 
 # 本番環境
 
+## 更新手順
+
+**以下のコードを実行**
+
+    flutter build web --base-href "/~yuka/game_todo_flutter/"
+
+**Cyberduckに以下のフォルダの中身をgame_todo_flutterにアップロード**
+
+    game_todo_flutter/game_todo_app/build/web
+
 **URL**
 https://gms.gdl.jp/~yuka/game_todo_flutter/
