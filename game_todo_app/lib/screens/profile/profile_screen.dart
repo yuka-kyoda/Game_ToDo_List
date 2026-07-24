@@ -6,6 +6,8 @@ import '../../services/user_service.dart';
 
 import '../../utils/page_route.dart';
 
+import '../../widgets/app_drawer.dart';
+
 import 'edit_profile_screen.dart';
 import 'delete_account_screen.dart';
 
@@ -18,6 +20,8 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const AppDrawer(),
+
       appBar: AppBar(
         title: const Text("プロフィール"),
       ),
@@ -138,7 +142,11 @@ class ProfileScreen extends StatelessWidget {
 
                     SizedBox(
                       width: double.infinity,
-                      child: OutlinedButton(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          foregroundColor: Colors.white,
+                        ),
                         child: const Text("アカウント削除"),
                         onPressed: () {
                           Navigator.push(

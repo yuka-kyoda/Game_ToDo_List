@@ -9,6 +9,7 @@ import 'game_form_screen.dart';
 import '../../utils/page_route.dart';
 
 import '../../widgets/app_header.dart';
+import '../../widgets/app_drawer.dart';
 import '../../widgets/game_card.dart';
 import '../../widgets/empty_view.dart';
 
@@ -41,7 +42,10 @@ class _GameListScreenState extends State<GameListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const AppDrawer(),
+
       appBar: const AppHeader(selectedIndex: 1),
+
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.add),
         label: const Text('ゲーム追加'),

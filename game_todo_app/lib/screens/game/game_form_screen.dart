@@ -131,17 +131,43 @@ class _GameFormScreenState extends State<GameFormScreen> {
       builder: (context) {
         return AlertDialog(
           title: const Text("確認"),
-          content: const Text("このゲームを削除しますか？"),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context, false),
-              child: const Text("キャンセル"),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.pop(context, true),
-              child: const Text("削除"),
-            ),
-          ],
+
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+
+              const Text("このゲームを削除しますか？"),
+
+              const SizedBox(height: 24),
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                  ),
+                  child: const Text("削除"),
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  child: const Text("キャンセル"),
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                ),
+              ),
+
+            ],
+          ),
         );
       },
     );

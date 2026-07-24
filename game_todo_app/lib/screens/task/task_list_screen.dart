@@ -11,6 +11,7 @@ import '../../services/task_service.dart';
 import '../../utils/page_route.dart';
 
 import '../../widgets/app_header.dart';
+import '../../widgets/app_drawer.dart';
 import '../../widgets/task_card.dart';
 import '../../widgets/empty_view.dart';
 
@@ -178,6 +179,8 @@ class _TaskListScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const AppDrawer(),
+
       appBar: widget.showBackButton
           ? AppBar(
               leading: IconButton(
