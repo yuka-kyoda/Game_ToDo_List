@@ -676,7 +676,13 @@ class _TaskListScreenState
       floatingActionButton:
           widget.game == null
               ? null
-              : FloatingActionButton(
+              : FloatingActionButton.extended(
+                  icon: const Icon(
+                    Icons.add,
+                  ),
+                  label: const Text(
+                    "タスク追加",
+                  ),
                   onPressed: () async {
 
                     await Navigator.push(
@@ -690,9 +696,6 @@ class _TaskListScreenState
 
                     await _checkRecurringTasks();
                   },
-                  child: const Icon(
-                    Icons.add,
-                  ),
                 ),
     );
   }

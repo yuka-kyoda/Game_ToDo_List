@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_storage/firebase_storage.dart';
 
 import '../models/game.dart';
+import 'task_service.dart';
 
 enum GameSortType {
   name,
@@ -232,6 +233,13 @@ class GameService {
   Future<void> deleteGame(
     String gameId,
   ) async {
+
+    // 関連するタスクを削除
+    await TaskService()
+        .deleteTasksByGame(gameId);
+
+
+    // ゲーム本体を削除
     await _firestore
         .collection('users')
         .doc(uid)

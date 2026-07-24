@@ -207,13 +207,8 @@ class _GameListScreenState extends State<GameListScreen> {
                 if (games.isEmpty) {
                   return EmptyView(
                     icon: Icons.sports_esports,
-                    title: 'ゲームがありません',
-                    message: '条件に一致するゲームはありません。',
-                    buttonText: 'ゲームを追加',
-                    onPressed: () async {
-                      await Navigator.push(context, appRoute(const GameFormScreen()));
-                      setState(() {});
-                    },
+                    title: "ゲームがありません",
+                    message: "条件に一致するゲームはありません。",
                   );
                 }
 

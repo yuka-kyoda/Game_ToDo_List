@@ -136,7 +136,7 @@ class _GameFormScreenState extends State<GameFormScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
 
-              const Text("このゲームを削除しますか？"),
+              const Text("このゲームを削除しますか？\nこのゲームのタスクも削除されます"),
 
               const SizedBox(height: 24),
 

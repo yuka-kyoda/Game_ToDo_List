@@ -679,6 +679,38 @@ class TaskService {
   }
 
   //==========================
+  // ゲーム削除時に関連タスクを削除
+  //==========================
+
+  Future<void> deleteTasksByGame(
+    String gameId,
+  ) async {
+
+    final snapshot = await _firestore
+        .collection('users')
+        .doc(uid)
+        .collection('tasks')
+        .where(
+          'gameId',
+          isEqualTo: gameId,
+        )
+        .get();
+
+    final batch =
+        _firestore.batch();
+
+    for (final doc in snapshot.docs) {
+
+      batch.delete(
+        doc.reference,
+      );
+
+    }
+
+    await batch.commit();
+  }
+
+  //==========================
   // 削除
   //==========================
 
