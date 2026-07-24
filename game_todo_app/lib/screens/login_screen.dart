@@ -94,18 +94,27 @@ class _LoginScreenState
 
             const SizedBox(height: 16),
 
-            TextButton(
-            onPressed: () {
-                Navigator.push(
-                context,
-                appRoute(
-                  const RegisterScreen(),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.blue,
+                  side: const BorderSide(
+                    color: Colors.blue,
+                  ),
                 ),
-                );
-            },
-            child: const Text(
-                "アカウントをお持ちでないですか？ 登録する",
-            ),
+                child: const Text(
+                  "アカウント登録はこちら",
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    appRoute(
+                      const RegisterScreen(),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
