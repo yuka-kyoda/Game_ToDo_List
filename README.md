@@ -1,6 +1,10 @@
-# 開発環境
+# Game_ToDo_List
 
-## 実行手順
+概要：ゲームのタスクを管理できるアプリ
+
+## 開発環境
+
+### 実行手順
 
 **以下のコードを実行**
 
@@ -12,13 +16,13 @@
     flutter pub get
     flutter run -d chrome
 
-## 終了手順
+### 終了手順
 
 **control + C**　or　**ターミナルの強制終了**
 
-# 本番環境
+## 本番環境
 
-## 更新手順
+### 更新手順
 
 **以下のコードを実行**
 
@@ -28,5 +32,8 @@
 
     game_todo_flutter/game_todo_app/build/web
 
-**URL**
+**URL**  
 https://gms.gdl.jp/~yuka/game_todo_flutter/
+
+## Firebaseリンク
+https://console.firebase.google.com/u/0/project/game-todo-list/overview?utm_source=chatgpt.com
