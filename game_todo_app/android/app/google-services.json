@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321611775631",
+    "project_id": "game-todo-list",
+    "storage_bucket": "game-todo-list.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321611775631:android:d0bc7ba9bee0570d573afa",
+        "android_client_info": {
+          "package_name": "com.example.game_todo_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWj61fGGrlMf8c21fTqJutTHB643N7yWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
