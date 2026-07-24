@@ -28,7 +28,7 @@
 
     flutter build web --base-href "/~yuka/game_todo_flutter/"
 
-**Cyberduckに以下のフォルダの中身をgame_todo_flutterにアップロード**
+**Cyberduckで以下のフォルダの中身をgame_todo_flutterにアップロード**
 
     game_todo_flutter/game_todo_app/build/web
 
