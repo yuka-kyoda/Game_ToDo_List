@@ -14,7 +14,9 @@ import '../widgets/app_header.dart';
 import '../widgets/app_drawer.dart';
 import '../widgets/dashboard_game_card.dart';
 import '../widgets/dashboard_stat_card.dart';
+import '../widgets/empty_view.dart';
 
+import 'game/game_form_screen.dart';
 import 'game/game_list_screen.dart';
 import 'task/task_list_screen.dart';
 
@@ -316,43 +318,63 @@ class _DashboardScreenState
                       height: 12,
                     ),
 
-                    ...games.map(
-                      (game) {
+                    if (games.isEmpty)
 
-                        final count =
-                            tasks
-                                .where(
-                                  (task) =>
-                                      task.gameId ==
-                                          game.id &&
-                                      !task
-                                          .isCompleted,
-                                )
-                                .length;
+                      EmptyView(
+                        icon: Icons.sports_esports,
+                        title: "ゲームがありません",
+                        message: "登録されているゲームはありません。",
+                        buttonText: "ゲームを追加",
+                        onPressed: () async {
 
-                        return DashboardGameCard(
-                          gameName:
-                              game.name,
-                          resetHour: game
-                              .dailyResetHour,
-                          taskCount:
-                              count,
-                          onTap: () async {
+                          await Navigator.push(
+                            context,
+                            appRoute(
+                              const GameFormScreen(),
+                            ),
+                          );
 
-                            await Navigator.push(
-                              context,
-                              appRoute(
-                                TaskListScreen(
-                                  game: game,
+                          setState(() {});
+                        },
+                      )
+
+                    else
+
+                      ...games.map(
+                        (game) {
+
+                          final count =
+                              tasks
+                                  .where(
+                                    (task) =>
+                                        task.gameId ==
+                                            game.id &&
+                                        !task.isCompleted,
+                                  )
+                                  .length;
+
+                          return DashboardGameCard(
+                            gameName:
+                                game.name,
+                            resetHour:
+                                game.dailyResetHour,
+                            taskCount:
+                                count,
+                            onTap: () async {
+
+                              await Navigator.push(
+                                context,
+                                appRoute(
+                                  TaskListScreen(
+                                    game: game,
+                                  ),
                                 ),
-                              ),
-                            );
+                              );
 
-                            await _checkRecurringTasks();
-                          },
-                        );
-
-                      },
+                              await _checkRecurringTasks();
+                            },
+                          );
+                        },
                     ),
                   ],
                 ),
