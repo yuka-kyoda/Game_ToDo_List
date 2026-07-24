@@ -5,7 +5,7 @@
 **以下のコードを実行**
 
     //フォルダへ移動
-    cd game_todo_flutter/game_todo_app
+    cd game_todo_app
 
     //開始時
     flutter clean                                    
@@ -19,3 +19,4 @@
 # 本番環境
 
 **URL**
+https://gms.gdl.jp/~yuka/game_todo_flutter/
