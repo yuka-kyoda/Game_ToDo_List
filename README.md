@@ -26,14 +26,14 @@
 
 **以下のコードを実行**
 
-    flutter build web --base-href "/~yuka/game_todo_flutter/"
+    flutter build web --base-href "/~yuka/game_todo_list/"
 
 **Cyberduckで以下のフォルダの中身をgame_todo_flutterにアップロード**
 
     game_todo_flutter/game_todo_app/build/web
 
 **URL**  
-https://gms.gdl.jp/~yuka/game_todo_flutter/
+https://gms.gdl.jp/~yuka/game_todo_list/
 
 ## Firebaseリンク
 https://console.firebase.google.com/u/0/project/game-todo-list/overview?utm_source=chatgpt.com
