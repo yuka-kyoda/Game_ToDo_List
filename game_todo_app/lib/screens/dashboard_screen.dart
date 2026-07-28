@@ -224,7 +224,7 @@ class _DashboardScreenState
 
                     DashboardStatCard(
                       title:
-                          "今日のタスク",
+                          "今日中",
                       value:
                           "$todayTasks件",
                       icon:
@@ -276,7 +276,7 @@ class _DashboardScreenState
 
                     DashboardStatCard(
                       title:
-                          "今週の予定",
+                          "今週中",
                       value:
                           "$weekTasks件",
                       icon: Icons
